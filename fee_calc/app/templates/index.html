@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+    <title>Fee Calculator</title>
+    <style>
+header {
+  background-color: White;
+  padding: 30px;
+  text-align: center;
+  font-size: 17px;
+  color: Teal;
+}
+form {
+  background-color: Teal;
+  padding: 100px;
+  text-align: center;
+  font-size: 15px;
+  color: white;
+}
+select {
+  background-color: White;
+  padding: 15px;
+  text-align: center;
+  font-size: 15px;
+  color: Teal;
+}
+button {
+  background-color: White;
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
+  color: Teal;
+
+}
+input {
+  background-color: White;
+  padding: 20px;
+  text-align: center;
+  font-size: 15px;
+  color: Teal;
+}
+
+section {
+  background-color: Teal;
+  padding: 20px;
+  text-align: center;
+  font-size: 17px;
+  color: White;
+}
+    </style>
+</head>
+<body>
+
+<header>
+  <h2>Loan Fee Calculator</h2>
+    <p> This calculator is designed to give you an idea about the fee of a personal loan. Choose the term
+        for the length of the loan and type the amount you wish to borrow between £1000 and £20000. </p>
+</header>
+<form action="/calculate" method="POST">
+    <section>
+    <p> Amount you wish to borrow(£):
+    <input type="number" name="amount" min="1000" max="20000" required="required"></p>
+      <select name="terms">
+      <option value="12">12 month</option>
+      <option value="24">24 month</option>
+    </select>
+    </section>
+    <button type="submit">Calculate</button>
+  </form>
+
+</body>
+</html>

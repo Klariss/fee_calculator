@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+    <title>Fee Calculator</title>
+    <style>
+header {
+  background-color: White;
+  padding: 30px;
+  text-align: center;
+  font-size: 17px;
+  color: Teal;
+}
+section {
+  background-color: Teal;
+  padding: 100px;
+  text-align: center;
+  font-size: 17px;
+  color: white;
+}
+
+    </style>
+</head>
+<body>
+
+<header>
+  <h2>Loan Fee Calculator</h2>
+    <p> This calculator is designed to give you an idea about the fee of a personal loan. Choose the term
+        for the length of the loan and type the amount you wish to borrow between £1000 and £20000. </p>
+</header>
+ <section>
+<h1>Calculated fee</h1>
+    <h2>£{{ calculated_fee }}</h2>
+    <p>For the term of {{ terms }} months and the loan of £{{ number }}.</p>
+ </section>
+</body>
+</html>
