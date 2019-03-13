@@ -8,7 +8,7 @@ class Term(Enum):
     TERM_24 = 24
 
 
-class Data:
+class LoanData:
     def __init__(self, loan, term):
         self.loan = loan
         self.term = term
@@ -39,6 +39,12 @@ class FeeCalc:
         return int(base * math.ceil(float(val) / base))
 
     def calculate(self, data):
+        if type(data.loan) not in [int, float]:
+            raise TypeError("The loan amount should only be int or float")
+
+        if 1000 > data.loan or data.loan > 20000:
+            raise ValueError("The loan amount should be between 1000 and 20000")
+
         relevant_table = self.find_nearest(data.loan)
 
         x1 = relevant_table.Loans.iloc[0]
@@ -49,14 +55,13 @@ class FeeCalc:
         if data.term == Term.TERM_12:
             y1 = relevant_table.Fees_12.iloc[0]
             y2 = relevant_table.Fees_12.iloc[1]
-
         elif data.term == Term.TERM_24:
             y1 = relevant_table.Fees_24.iloc[0]
             y2 = relevant_table.Fees_24.iloc[1]
+        else:
+            raise ValueError("The Term should be Either Term.TERM_12 or Term.TERM_24")
 
         return self.rounding(self.linear_interpolate(value=data.loan, x1=x1, x2=x2, y1=y1, y2=y2))
 
 
-fee_test = FeeCalc()
 
-#print(fee_test.calculate(Data(loan=1, term=Term.TERM_12)))
