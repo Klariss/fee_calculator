@@ -13,12 +13,16 @@ The given fee structure is loaded into a CSV file.
 
 [Finally testing the calculator.](https://github.com/Klariss/fee_calculator/blob/master/fee_calc/testing.py)
 
-## [Wrapping the calculator in a Flask application](https://github.com/Klariss/fee_calculator/blob/master/fee_calc/flask_calc.py)
+## [Wrapping the calculator into a Flask application](https://github.com/Klariss/fee_calculator/blob/master/fee_calc/flask_calc.py)
 
 ### The layout of the Fee calculator 
 
 The layout was created by using HTML and CSS.
+
 [Render a template when the route is triggered with GET method](https://github.com/Klariss/fee_calculator/blob/master/fee_calc/templates/index.html)
+
 ![alt text](layout.jpeg)
+
 [Read form inputs and calculate the fee if route is triggered with POST](https://github.com/Klariss/fee_calculator/blob/master/fee_calc/templates/calculate.html)
+
 ![alt text](layout2.jpeg)
